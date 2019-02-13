@@ -1,0 +1,12 @@
+<h1>More infos on <%= @restaurant[:name] %></h1>
+<p>Find us at <%= @restaurant[:address] %></p>
+<h2> Rating given by clients</h2>
+  <ul>
+  <% @restaurant.reviews.each do |restaurant| %>
+    <li><%= restaurant.content %></li>
+    <% end %>
+  </ul>
+
+<div>
+   <%= link_to "Create a New Review", new_restaurant_review_path(@restaurant), class: "btn btn-danger" %>
+</div>
